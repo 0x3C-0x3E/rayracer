@@ -1,7 +1,12 @@
 #include <raylib.h>
-#include <stdio.h>
+#include "app/app.h"
 
 int main(void) {
-    printf("hello, world!\n");
+    App app;
+
+    app_init(&app);
+
+    app_run(&app);
+
     return 0;
 }
