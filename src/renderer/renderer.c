@@ -12,17 +12,17 @@ void renderer_start_drawing(Renderer* renderer) {
 }
 
 void renderer_draw(Renderer* renderer, RenderInfo* render_info) {
-    DrawTexturePro(*render_info->texture, 
+    DrawTexturePro(render_info->texture,
                    render_info->texture_rect,
                    (Rectangle) {
                        render_info->x,
                        render_info->y,
-                       render_info->texture_rect.width,
-                       render_info->texture_rect.height
+                       render_info->texture_rect.width * renderer->scale,
+                       render_info->texture_rect.height * renderer->scale,
                    },
                    (Vector2) {
-                       (float) render_info->texture_rect.width  / 2 * renderer->scale,
-                       (float) render_info->texture_rect.height / 2 * renderer->scale
+                       (float) render_info->texture_rect.width  / 2,
+                       (float) render_info->texture_rect.height / 2,
                    },
                    render_info->angle,
                    RAYWHITE

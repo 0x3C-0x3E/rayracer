@@ -4,12 +4,14 @@ void game_init(Game* game, Renderer* renderer) {
     game->context = (GameContext) {
         .renderer = renderer,
     };
+
+    player_init(&game->player, &game->context);
 }
 
 void game_update(Game* game) {
-
+    player_update(&game->player);
 }
 
 void game_draw(Game* game) {
-    renderer_draw_text(game->context.renderer, "Hello from the game scene", 30, 30);
+    player_draw(&game->player);
 }

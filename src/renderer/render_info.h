@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 typedef struct {
-    Texture* texture;
+    Texture texture;
     Rectangle texture_rect;
 
     int x, y;

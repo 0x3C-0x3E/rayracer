@@ -5,9 +5,11 @@
 #include <stdbool.h>
 
 #include "game_context.h"
+#include "../objects/player.h"
 
 typedef struct {
     GameContext context; 
+    Player player;
 } Game;
 
 void game_init(Game* game, Renderer* renderer);

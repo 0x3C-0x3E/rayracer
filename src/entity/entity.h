@@ -14,12 +14,16 @@ typedef struct {
     float x_vel, y_vel, x_acc, y_acc;
     
     Rectangle texture_rect;
-    Texture* texture_ptr;
+    Texture texture;
     
     GameContext* context;
 
 } Entity;
 
-void entity_init(Entity* entity);
+void entity_init(Entity* entity, GameContext* context);
+
+void entity_reset_pos(Entity* entity);
+
+void entity_update_pos(Entity* entity);
 
 void entity_draw(Entity* entity);
