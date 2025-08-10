@@ -13,7 +13,6 @@ void player_init(Player* player, GameContext* context) {
 }
 
 void player_update(Player* player) {
-    player->entity.x_vel = 100;
     entity_update_pos(&player->entity);
 }
 

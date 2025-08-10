@@ -12,6 +12,8 @@ typedef struct {
     float y;
 
     float x_vel, y_vel, x_acc, y_acc;
+
+    int angle;
     
     Rectangle texture_rect;
     Texture texture;
