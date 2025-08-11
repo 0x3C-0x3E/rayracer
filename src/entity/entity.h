@@ -13,7 +13,9 @@ typedef struct {
 
     float x_vel, y_vel, x_acc, y_acc;
 
-    int angle;
+    float speed; // useful for cars n stuff
+
+    float angle;
     
     Rectangle texture_rect;
     Texture texture;

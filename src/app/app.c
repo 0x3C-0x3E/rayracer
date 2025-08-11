@@ -10,7 +10,7 @@ void app_init(App* app) {
     app_init_raylib(app);
 
     app->renderer = (Renderer) {
-        .fps = 60,
+        .fps = 165,
         .scale = 3,
         .font_size = 20,
 

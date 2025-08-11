@@ -21,8 +21,8 @@ void renderer_draw(Renderer* renderer, RenderInfo* render_info) {
                        render_info->texture_rect.height * renderer->scale,
                    },
                    (Vector2) {
-                       (float) render_info->texture_rect.width  / 2,
-                       (float) render_info->texture_rect.height / 2,
+                       (float) render_info->texture_rect.width  / 2 * renderer->scale,
+                       (float) render_info->texture_rect.height / 2 * renderer->scale,
                    },
                    render_info->angle,
                    RAYWHITE

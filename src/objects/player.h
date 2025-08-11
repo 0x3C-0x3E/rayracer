@@ -7,6 +7,13 @@
 
 typedef struct {
     Entity entity;    
+
+    float turn_speed;
+    float acceleration;
+    float deceleration;
+    float max_speed;
+
+    float friction;
 } Player;
 
 void player_init(Player* player, GameContext* context);

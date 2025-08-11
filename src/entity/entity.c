@@ -11,6 +11,7 @@ void entity_reset_pos(Entity* entity) {
     entity->y_vel = 0;
     entity->x_acc = 0;
     entity->y_acc = 0;
+    entity->speed = 0;
 }
 
 void entity_update_pos(Entity* entity) {
@@ -23,7 +24,7 @@ void entity_update_pos(Entity* entity) {
 
 void entity_draw(Entity* entity) {
     RenderInfo render_info = {
-        .angle = 0,
+        .angle = entity->angle,
         .texture = entity->texture,
         .texture_rect = entity->texture_rect,
         .x = entity->x,
