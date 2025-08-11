@@ -8,7 +8,7 @@ void renderer_init(Renderer* renderer) {
 
     renderer->camera = (Camera2D){0};
     renderer->camera.target = (Vector2) {0, 0};
-    renderer->camera.offset = (Vector2) {(float) renderer->window_width / 2,(float) renderer->window_width / 2};
+    renderer->camera.offset = (Vector2) {(float) renderer->window_width / 2,(float) renderer->window_height / 2};
     renderer->camera.rotation = 0.0f;
     renderer->camera.zoom = 1.0f;
 }
@@ -19,7 +19,7 @@ void renderer_start_drawing_scene(Renderer* renderer) {
     
     renderer->window_width  = GetScreenWidth();
     renderer->window_height = GetScreenHeight();
-    renderer->camera.offset = (Vector2) {(float) renderer->window_width / 2,(float) renderer->window_width / 2};
+    renderer->camera.offset = (Vector2) {(float) renderer->window_width / 2,(float) renderer->window_height / 2};
 
     ClearBackground(RAYWHITE);
 }

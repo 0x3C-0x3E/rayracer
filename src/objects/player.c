@@ -73,7 +73,7 @@ void player_draw(Player* player) {
         5.0f
     );
 
-    renderer_draw_text(player->entity.context->renderer, "1234567890 - the quick brown fox jumps over the lazy dog", 50, 50);
+    // renderer_draw_text(player->entity.context->renderer, "1234567890 - the quick brown fox jumps over the lazy dog", 50, 50);
 
     entity_draw(&player->entity);
 }

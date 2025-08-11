@@ -4,7 +4,7 @@
 void tile_init(Tile* tile, GameContext* context) {
     tile->entity = (Entity) {
         .texture = context->tileset,
-        .texture_rect = (Rectangle) {32, 0, 16, 16}
+        .texture_rect = (Rectangle) {random_in_range(0, 32), 0, 16, 16}
     };
 
     entity_init(&tile->entity, context);
