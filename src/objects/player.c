@@ -38,11 +38,11 @@ void player_update(Player* player) {
     }
 
     if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) {
-        player->entity.angle -= player->turn_speed * dt; 
+        player->entity.angle -= (player->entity.speed >= 0) ? player->turn_speed * dt : -player->turn_speed * dt;
     }
 
     if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) {
-        player->entity.angle += player->turn_speed * dt; 
+        player->entity.angle += (player->entity.speed >= 0) ? player->turn_speed * dt : -player->turn_speed * dt; 
     }
 
     if (player->entity.speed > player->max_speed) {
