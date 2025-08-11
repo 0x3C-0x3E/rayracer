@@ -30,3 +30,8 @@ void renderer_draw_text(Renderer* renderer, const char* text, int x, int y);
 
 void renderer_end_drawing_scene(Renderer* renderer);
 
+void renderer_end_drawing(Renderer* renderer);
+
+void renderer_pause_drawing_scene(Renderer* renderer);
+
+void renderer_resume_drawing_scene(Renderer* renderer);

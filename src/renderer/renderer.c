@@ -51,3 +51,15 @@ void renderer_end_drawing_scene(Renderer* renderer) {
     EndMode2D();
     EndDrawing();
 }
+
+void renderer_end_drawing(Renderer* renderer) {
+    EndDrawing();
+}
+
+void renderer_pause_drawing_scene(Renderer* renderer) {
+    EndMode2D();
+}
+
+void renderer_resume_drawing_scene(Renderer* renderer) {
+    BeginMode2D(renderer->camera);
+}

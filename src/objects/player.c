@@ -19,7 +19,7 @@ void player_init(Player* player, GameContext* context) {
 
     player->friction = 0.99f;
 
-    player->accelerating = 0;
+    player->acc_dir = 0;
 
     entity_init(&player->entity, context);
     entity_reset_pos(&player->entity);
@@ -31,18 +31,21 @@ void player_update(Player* player) {
 
     if (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) {
         player->entity.speed += player->acceleration * dt;
+        player->acc_dir = 1;
     } else if (IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) {
         player->entity.speed -= player->deceleration * dt;
+        player->acc_dir = -1;
     } else {
         player->entity.speed *= player->friction;
+        player->acc_dir = 0;
     }
 
     if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) {
-        player->entity.angle -= (player->entity.speed >= 0) ? player->turn_speed * dt : -player->turn_speed * dt;
+        player->entity.angle -= (player->acc_dir >= 0) ? player->turn_speed * dt : -player->turn_speed * dt;
     }
 
     if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) {
-        player->entity.angle += (player->entity.speed >= 0) ? player->turn_speed * dt : -player->turn_speed * dt; 
+        player->entity.angle += (player->acc_dir >= 0) ? player->turn_speed * dt : -player->turn_speed * dt; 
     }
 
     if (player->entity.speed > player->max_speed) {
@@ -72,8 +75,11 @@ void player_draw(Player* player) {
         player->entity.context->renderer->dt,
         5.0f
     );
-
+    
+    renderer_pause_drawing_scene(player->entity.context->renderer);
     // renderer_draw_text(player->entity.context->renderer, "1234567890 - the quick brown fox jumps over the lazy dog", 50, 50);
+    DrawFPS(30, 30);
+    renderer_resume_drawing_scene(player->entity.context->renderer);
 
     entity_draw(&player->entity);
 }

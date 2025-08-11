@@ -9,7 +9,7 @@
 typedef struct {
     Entity entity;    
 
-    int accelerating;
+    int acc_dir;
 
     float turn_speed;
     float acceleration;

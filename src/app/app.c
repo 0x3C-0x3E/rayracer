@@ -35,5 +35,6 @@ void app_run(App* app) {
         game_draw(&app->game);
 
         renderer_end_drawing_scene(&app->renderer);
+        renderer_end_drawing(&app->renderer);
     }
 }
