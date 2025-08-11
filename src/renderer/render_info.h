@@ -7,6 +7,6 @@ typedef struct {
     Texture texture;
     Rectangle texture_rect;
 
-    int x, y;
+    float x, y;
     int angle;
 } RenderInfo;

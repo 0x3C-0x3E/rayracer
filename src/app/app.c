@@ -29,11 +29,11 @@ void app_init(App* app) {
 void app_run(App* app) {
     
     while (!WindowShouldClose()) {
-        renderer_start_drawing(&app->renderer);
+        renderer_start_drawing_scene(&app->renderer);
 
         game_update(&app->game);
         game_draw(&app->game);
 
-        renderer_end_drawing(&app->renderer);
+        renderer_end_drawing_scene(&app->renderer);
     }
 }

@@ -4,9 +4,12 @@
 #include <stdlib.h>
 
 #include "../entity/entity.h"
+#include "../util/utils.h"
 
 typedef struct {
     Entity entity;    
+
+    int accelerating;
 
     float turn_speed;
     float acceleration;
